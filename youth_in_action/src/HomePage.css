@@ -1,0 +1,248 @@
+.home-page {
+    background-color: #10171c;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
+  }
+  
+  .home-page .div {
+    background-color: #10171c;
+    height: 1011px;
+    overflow: hidden;
+    position: relative;
+    width: 1512px;
+  }
+  
+  .home-page .overlap {
+    height: 1192px;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 1751px;
+  }
+  
+  .home-page .rectangle {
+    background: linear-gradient(
+      180deg,
+      rgba(39, 48, 55, 1) 0%,
+      rgba(68, 50, 48, 1) 100%
+    );
+    height: 1011px;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 1512px;
+  }
+  
+  .home-page .prev-org {
+    background-color: #d9d9d9;
+    border-radius: 33px;
+    height: 546px;
+    left: 128px;
+    opacity: 0.08;
+    position: absolute;
+    top: 253px;
+    width: 276px;
+  }
+  
+  .home-page .next-org {
+    background-color: #d9d9d9;
+    border-radius: 33px;
+    height: 546px;
+    left: 1104px;
+    opacity: 0.08;
+    position: absolute;
+    top: 254px;
+    width: 276px;
+  }
+  
+  .home-page .property-default-wrapper {
+    border-radius: 5px;
+    height: 849px;
+    left: 485px;
+    overflow: hidden;
+    position: absolute;
+    top: 146px;
+    width: 572px;
+  }
+  
+  .home-page .property-default {
+    left: 4px !important;
+    top: 10px !important;
+  }
+  
+  .home-page .arrow-down {
+    height: 48px !important;
+    left: 534px !important;
+    position: absolute !important;
+    top: 892px !important;
+    width: 48px !important;
+  }
+  
+  .home-page .text-wrapper {
+    color: #f8fc69;
+    font-family: "Gabarito-Regular", Helvetica;
+    font-size: 32px;
+    font-weight: 400;
+    left: 678px;
+    letter-spacing: -0.23px;
+    line-height: 44px;
+    position: absolute;
+    top: 101px;
+    white-space: nowrap;
+    width: 213px;
+  }
+  
+  .home-page .photo {
+    height: 389px;
+    left: 137px;
+    position: absolute;
+    top: 332px;
+    width: 259px;
+  }
+  
+  .home-page .img {
+    height: 389px;
+    left: 1112px;
+    position: absolute;
+    top: 332px;
+    width: 259px;
+  }
+  
+  .home-page .photo-2 {
+    height: 1055px;
+    left: 1047px;
+    position: absolute;
+    top: 137px;
+    width: 704px;
+  }
+  
+  .home-page .text-wrapper-2 {
+    color: #ffffff;
+    font-family: "Gabarito-Regular", Helvetica;
+    font-size: 40px;
+    font-weight: 400;
+    left: 892px;
+    letter-spacing: -0.23px;
+    line-height: 44px;
+    position: absolute;
+    top: 697px;
+    white-space: nowrap;
+    width: 52px;
+  }
+  
+  .home-page .rectangle-2 {
+    border: 0px none;
+    border-radius: 33px;
+    height: 545px;
+    left: 127px;
+    opacity: 0.7;
+    position: absolute;
+    top: 254px;
+    width: 278px;
+  }
+  
+  .home-page .text-wrapper-3 {
+    color: #ffffff;
+    font-family: "Gabarito-Regular", Helvetica;
+    font-size: 20px;
+    font-weight: 400;
+    left: 1345px;
+    letter-spacing: -0.23px;
+    line-height: 17px;
+    position: absolute;
+    top: 37px;
+    white-space: nowrap;
+    width: 162px;
+  }
+  
+  .home-page .task-bar {
+    height: 85px;
+    left: 0;
+    position: fixed;
+    top: 0;
+    width: 2355px;
+  }
+  
+  .home-page .overlap-group {
+    background-color: #10171c;
+    border-bottom-style: solid;
+    border-bottom-width: 4px;
+    border-color: #f8fc69;
+    height: 85px;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 1512px;
+  }
+  
+  .home-page .rectangle-3 {
+    background-color: #d9d9d9;
+    border-radius: 33px;
+    height: 35px;
+    left: 104px;
+    position: absolute;
+    top: 18px;
+    width: 297px;
+  }
+  
+  .home-page .text-wrapper-4 {
+    color: #ffffff;
+    font-family: "Gabarito-Regular", Helvetica;
+    font-size: 20px;
+    font-weight: 400;
+    left: 46px;
+    letter-spacing: -0.23px;
+    line-height: 17px;
+    position: absolute;
+    top: 29px;
+    white-space: nowrap;
+    width: 40px;
+  }
+  
+  .home-page .text-wrapper-5 {
+    color: #ffffff;
+    font-family: "Gabarito-Regular", Helvetica;
+    font-size: 20px;
+    font-weight: 400;
+    left: 419px;
+    letter-spacing: -0.23px;
+    line-height: 17px;
+    position: absolute;
+    top: 29px;
+    white-space: nowrap;
+    width: 47px;
+  }
+  
+  .home-page .text-wrapper-6 {
+    color: #ffffff;
+    font-family: "Gabarito-Regular", Helvetica;
+    font-size: 20px;
+    font-weight: 400;
+    left: 1341px;
+    letter-spacing: -0.23px;
+    line-height: 17px;
+    position: absolute;
+    top: 34px;
+    white-space: nowrap;
+    width: 162px;
+  }
+  
+  .home-page .screenshot {
+    height: 55px;
+    left: 1128px;
+    object-fit: cover;
+    position: absolute;
+    top: 14px;
+    width: 200px;
+  }
+  
+  .home-page .screenshot-2 {
+    height: 55px;
+    left: 2821px;
+    object-fit: cover;
+    position: absolute;
+    top: 132px;
+    width: 200px;
+  }
