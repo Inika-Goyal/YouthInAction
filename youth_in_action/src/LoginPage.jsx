@@ -39,8 +39,9 @@ function LoginPage() {
                   <div className="illuminate-change">
                     Illuminate Change
                     <br />
-                    <br />
-                    <br />
+                    <br/>
+                    <br/>
+
                     Empower Communities
                   </div>
 
