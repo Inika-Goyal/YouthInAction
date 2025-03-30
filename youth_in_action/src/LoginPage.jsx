@@ -12,12 +12,9 @@ export const Box = () => {
 };
 
 function LoginPage() {
-  const navigate = useNavigate();  // Initialize navigate function
+  const navigate = useNavigate();  
 
   const handleLogin = () => {
-    // Add your login validation logic here
-
-    // If login is successful, navigate to HomePage
     navigate("/user");
   };
 
@@ -27,7 +24,6 @@ function LoginPage() {
         <div className="overlap">
           <div className="overlap-group">
             <Box />
-            <div className="login" />
             <div className="login-container">
               <input 
                 className="input" 
@@ -45,7 +41,6 @@ function LoginPage() {
                 Illuminate Change
                 <br />
                 <br/>
-                <br/>
                 Empower Communities
               </div>
 
@@ -54,9 +49,6 @@ function LoginPage() {
                 need. From environmental action to education and community
                 outreach, we make it easy for teens to give back.
               </p>
-              <br/>
-              <br/>
-              <br/>
 
               <button className="login-button" onClick={handleLogin}>Login</button>
             </div>
