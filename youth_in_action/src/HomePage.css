@@ -134,15 +134,19 @@
 }
 
 .cardImage {
-  background-color: #d9d9d9;
-  border-radius: 5px;
-  width: 464px;
-  height: 685px;
-  position: absolute;
-  top: 36px;
-  left: 50%;
-  transform: translate(-50%);
-}
+    background-color: #00197d; /* Fallback color */
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-radius: 5px;
+    width: 500px;
+    height: 685px;
+    position: absolute;
+    top: 36px;
+    left: 50%;
+    transform: translate(-50%);
+    opacity: 1;
+  }
 
 @media (width<=991px) {
   .cardImage {

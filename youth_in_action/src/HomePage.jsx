@@ -1,12 +1,113 @@
 "use client";
-import React from "react";
+import React, { useState, useEffect } from "react";
 import styles from "./HomePage.css";
 import "./HomePage.css"; // Import the CSS file for styles
+
+import lightsandcubes from "./assets/lights-and-cubes.png";
+import techCorpImage from './assets/tech-corp.png';
+
+// Then use it
+<img src={techCorpImage} alt="Tech Corp" />
+
+// User preferences for matching
+const userPreferences = {
+  field: "Tech",  // Desired field
+  location: "NYC", // Desired location
+  min_hours: 20, // Minimum desired hours
+};
+
+// Function to calculate match score for an organization
+const calculateMatchScore = (organization) => {
+  let score = 0;
+
+  // Matching criteria based on field, location, and hours
+  if (organization.field === userPreferences.field) score += 3;
+  if (organization.location === userPreferences.location) score += 3;
+  if (organization.hours >= userPreferences.min_hours) score += 2; // +2 for meeting min hours
+
+  // Return the match score as a percentage (out of 8 in this case)
+  return (score / 8) * 100;
+};
+
+// Example organization data
+const organizationsData = [
+  {
+    id: 1,
+    title: "Tech Corp",
+    hours: 25,
+    description: "A leading tech company.",
+    imageUrl: techCorpImage,
+    field: "Tech",
+    location: "NYC",
+    applicationLink: "/apply/tech-corp"
+  },
+  {
+    id: 2,
+    title: "Finance Corp",
+    hours: 15,
+    description: "A financial company.",
+    imageUrl: "/images/finance-corp.png",
+    field: "Finance",
+    location: "NYC",
+    applicationLink: "/apply/finance-corp"
+  },
+  {
+    id: 3,
+    title: "Design Studio",
+    hours: 30,
+    description: "Creative studio for design projects.",
+    imageUrl: "/images/design-studio.png",
+    field: "Design",
+    location: "Remote",
+    applicationLink: "/apply/design-studio"
+  }
+  // Add more organizations as needed
+];
+
 function InputDesign() {
+  const [sortedOrganizations, setSortedOrganizations] = useState([]);
+  const [counter, setCounter] = useState(0); // Counter to track which organization to display
+
+  // UseEffect to run when the page loads
+  useEffect(() => {
+    // Add match score to each organization and calculate
+    const organizationsWithScores = organizationsData.map((org) => {
+      const matchScore = calculateMatchScore(org);
+      return { ...org, match_score: matchScore };
+    });
+
+    // Sort organizations by match_score in descending order
+    const sortedOrganizationsList = organizationsWithScores.sort((a, b) => b.match_score - a.match_score);
+
+    // Set the sorted list to state
+    setSortedOrganizations(sortedOrganizationsList);
+  }, []); // Empty dependency array ensures this runs once on mount
+
+  // Function to increment the counter
+  const handleNext = () => {
+    if (counter < sortedOrganizations.length - 1) {
+      setCounter(counter + 1);
+    }
+  };
+
+  // Function to decrement the counter
+  const handlePrevious = () => {
+    if (counter > 0) {
+      setCounter(counter - 1);
+    }
+  };
+
   return (
     <main className="mainContainer">
       <Header />
-      <ContentSection />
+      <ContentSection
+        organization={sortedOrganizations[counter]} // Display organization based on counter
+        handleNext={handleNext}
+        handlePrevious={handlePrevious}
+        canGoNext={counter < sortedOrganizations.length - 1}
+        canGoPrevious={counter > 0}
+      />
+      {/* Removed the navigation buttons since we're using side cards instead */}
     </main>
   );
 }
@@ -22,31 +123,51 @@ function Header() {
   );
 }
 
-function ContentSection() {
+function ContentSection({ organization, handleNext, handlePrevious, canGoNext, canGoPrevious }) {
   return (
     <section className="contentSection">
-      <h2 className="matchPercentage">90% Match</h2>
+      <h2 className="matchPercentage">{organization ? `${organization.match_score}% Match` : "Loading..."}</h2>
       <div className="cardContainer">
-        <div className="sideCardLeft" />
-        <OrganizationCard />
-        <div className="sideCardRight" />
+        <div 
+          className="sideCardLeft" 
+          onClick={canGoPrevious ? handlePrevious : undefined} 
+          style={{ cursor: canGoPrevious ? 'pointer' : 'default', opacity: canGoPrevious ? 1 : 0.5 }}
+        />
+        {organization ? (
+          <OrganizationCard
+            key={organization.id}
+            title={organization.title}
+            estimatedHours={organization.hours}
+            description={organization.description}
+            imageUrl={organization.imageUrl}
+          />
+        ) : (
+          <p>Loading...</p>
+        )}
+        <div 
+          className="sideCardRight" 
+          onClick={canGoNext ? handleNext : undefined} 
+          style={{ cursor: canGoNext ? 'pointer' : 'default', opacity: canGoNext ? 1 : 0.5 }}
+        />
       </div>
     </section>
   );
 }
 
-function OrganizationCard() {
+function OrganizationCard({ title, estimatedHours, description, imageUrl }) {
   return (
     <article className="mainCard">
-      <div className="cardImage" />
+      <div className="cardImage"  >       <img src={techCorpImage}
+          style={{ 
+            width: '500px',
+            height: '685px',
+            objectFit: 'fill'
+          }} /> </div> 
       <div className="cardContent">
-        <h3 className="orgTitle">Organization Title</h3>
+        <h3 className="orgTitle">{title}</h3>
         <p className="hoursLabel">Estimated Hours</p>
-        <p className="hoursValue">24</p>
-        <p className="orgDescription">
-          Description/Bio the gap between young changemakers and organizations
-          in need. From environmental...
-        </p>
+        <p className="hoursValue">{estimatedHours}</p>
+        <p className="orgDescription">{description}</p>
         <div className="actionButtons">
           <button className="arrowButton">
             <svg
