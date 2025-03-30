@@ -5,7 +5,17 @@ import heart from "./assets/heart.png";
 import heartBlank from "./assets/heart_blank.png";
 import "./SavedApplicationsPage.css";
 import { organizationsData, imageMap } from "./OrgData";
-
+import MenuDropDown from "./MenuDropDown"; // Import the MenuDropDown component
+function Header() {
+  return (
+    <header className="navBar">
+      <h1 className="logo">Goal</h1>
+      <div className="progressBar" />
+      <p className="progressText">0/100</p>
+      <MenuDropDown />
+    </header>
+  );
+}
 
 function SavedApplicationsPage() {
   const [organizations, setOrganizations] = useState(organizationsData);
@@ -33,19 +43,12 @@ function SavedApplicationsPage() {
 
   return (
     <div className="saved-applications">
+  
       <div className="overlap-wrapper">
         <div className="overlap">
           <div className="rectangle" />
+          <Header />       
           <div className="text-wrapper">Saved Applications</div>
-
-          <div className="task-bar">
-            <div className="overlap-group">
-              <div className="div">Menu</div>
-              <div className="rectangle-2" />
-              <div className="text-wrapper-2">Goal</div>
-              <div className="text-wrapper-3">{savedOrganizations.length}/100</div>
-            </div>
-          </div>
 
           {/* Dynamic Grid Rendering (3 organizations a row) */}
           <div className="organization-grid">

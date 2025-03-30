@@ -1,14 +1,10 @@
 "use client";
 import React, { useState, useEffect } from "react";
-import styles from "./HomePage.css";
 import { useNavigate } from "react-router-dom";
 import "./HomePage.css"; // Import the CSS file for styles
 import MenuDropDown from "./MenuDropDown"; // Import the MenuDropDown component
-import lightsandcubes from "./assets/lights-and-cubes.png";
-import techCorpImage from './assets/tech-corp.png';
-import financeCorpImage from './assets/finance_corp.png'; 
-import designImage from './assets/design-studio.png';
-import animalImage from './assets/animal.png'; // Import additional images for organizations
+
+import { organizationsData, imageMap } from "./OrgData";
 
 // User preferences for matching
 const userPreferences = {
@@ -29,53 +25,6 @@ const calculateMatchScore = (organization) => {
   // Return the match score as a percentage (out of 8 in this case)
   return (score / 8) * 100;
 };
-
-// Example organization data
-const organizationsData = [
-  {
-    id: 1,
-    title: "Youth Sports Science",
-    hours: 2,
-    description: "develop and deliver high-quality, immersive learning experiences that bridge the gap between theoretical knowledge and practical applications.",
-    imageUrl: techCorpImage,
-    field: "Sports",
-    location: "Chicago", 
-    applicationLink: "/apply/tech-corp"
-  },
-  {
-    id: 2,
-    title: "MakeAWish",
-    hours: 3,
-    description: "help make the wishes of children with critical illnesses",
-    imageUrl: financeCorpImage,
-    field: "Community",
-    location: "Chicago",
-    applicationLink: "/apply/finance-corp"
-  },
-  {
-    id: 3,
-    title: "Central Texas Food Bank",
-    hours: 4,
-    description: "Helping distribute food, providing cheerful service to clients, and assisting with set-up and teardown at the distribution site",
-    imageUrl: designImage,
-    field: "Community",
-    location: "Austin",
-    applicationLink: "/apply/design-studio"
-  },
-  {
-    id: 4,
-    title: "The Animal Foundation",
-    hours: 4,
-    description: "Give abandoned animals food, shelter, medical care, exercise, socialization, mental stimulation, and training.",
-    imageUrl: animalImage,
-    field: "Wildlife",
-    location: "Las Vegas",
-    applicationLink: "https://animalfoundation.com/volunteer/about-volunteering",
-
-  }
-
-  // Add more organizations as needed
-];
 
 function InputDesign() {
   const [sortedOrganizations, setSortedOrganizations] = useState([]);
@@ -152,6 +101,9 @@ function SideCard({ organization, onClick, isDisabled, cardClass }) {
     );
   }
 
+  // Use the correct image from imageMap based on imageName property
+  const orgImage = organization.imageName ? imageMap[organization.imageName] : null;
+
   return (
     <div 
       className={cardClass} 
@@ -190,14 +142,14 @@ function SideCard({ organization, onClick, isDisabled, cardClass }) {
         zIndex: 0
       }} />
       
-      {organization.imageUrl && (
+      {orgImage && (
         <div style={{ 
           position: 'absolute',
           top: 0,
           left: 0,
           width: '100%',
           height: '100%',
-          backgroundImage: `url(${organization.imageUrl})`,
+          backgroundImage: `url(${orgImage})`,
           backgroundPosition: 'center',
           backgroundSize: 'cover',
           backgroundRepeat: 'no-repeat',
@@ -212,7 +164,7 @@ function SideCard({ organization, onClick, isDisabled, cardClass }) {
 function ContentSection({ organization, prevOrganization, nextOrganization, handleNext, handlePrevious, canGoNext, canGoPrevious }) {
   return (
     <section className="contentSection">
-      <h2 className="matchPercentage">{organization ? `${organization.match_score}% Match` : "Loading..."}</h2>
+      <h2 className="matchPercentage">{organization ? `${Math.round(organization.match_score)}% Match` : "Loading..."}</h2>
       <div className="cardContainer">
         <SideCard 
           organization={prevOrganization}
@@ -224,10 +176,7 @@ function ContentSection({ organization, prevOrganization, nextOrganization, hand
         {organization ? (
           <OrganizationCard
             key={organization.id}
-            title={organization.title}
-            estimatedHours={organization.hours}
-            description={organization.description}
-            imageUrl={organization.imageUrl}
+            organization={organization}
           />
         ) : (
           <p>Loading...</p>
@@ -244,19 +193,23 @@ function ContentSection({ organization, prevOrganization, nextOrganization, hand
   );
 }
 
-function OrganizationCard({ title, estimatedHours, description, imageUrl }) {
-  const [isLiked, setIsLiked] = useState(false); // Add state for tracking liked status
-  const navigate = useNavigate(); 
+function OrganizationCard({ organization }) {
+  const [isLiked, setIsLiked] = useState(organization.saved === 1); // Set initial liked status based on saved property
+  const navigate = useNavigate();
+  
   // Function to toggle the liked state
   const toggleLike = () => {
     setIsLiked(!isLiked);
     navigate("/OrgPage"); 
   };
 
+  // Use the correct image from imageMap based on imageName property
+  const orgImage = organization.imageName ? imageMap[organization.imageName] : null;
+
   return (
     <article className="mainCard">
       <div className="cardImage">       
-        <img src={imageUrl}
+        <img src={orgImage}
           style={{ 
             width: '500px',
             height: '685px',
@@ -264,10 +217,10 @@ function OrganizationCard({ title, estimatedHours, description, imageUrl }) {
           }} /> 
       </div> 
       <div className="cardContent">
-        <h3 className="orgTitle">{title}</h3>
+        <h3 className="orgTitle">{organization.title}</h3>
         <p className="hoursLabel">Estimated Hours</p>
-        <p className="hoursValue">{estimatedHours}</p>
-        <p className="orgDescription">{description}</p>
+        <p className="hoursValue">{organization.hours}</p>
+        <p className="orgDescription">{organization.description}</p>
         <div className="actionButtons">
           <button className="arrowButton">
             <svg
@@ -287,7 +240,9 @@ function OrganizationCard({ title, estimatedHours, description, imageUrl }) {
               ></path>
             </svg>
           </button>
-          <button className="applicationButton">Send Application</button>
+          <button className="applicationButton" onClick={() => window.open(organization.applicationLink, '_blank')}>
+            Send Application
+          </button>
           <button className="heartButton" onClick={toggleLike}>
             <svg
               width="45"

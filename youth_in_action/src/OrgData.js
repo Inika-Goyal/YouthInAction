@@ -1,32 +1,33 @@
 import org1 from "./assets/lights-and-cubes.png";//TODO: import all org images here
-// import org2 from "./assets/logo.svg";
-// import org3 from "./assets/logo.svg";
-// import org4 from "./assets/logo.svg";
-// import org5 from "./assets/logo.svg";
+import techCorpImage from './assets/tech-corp.png';
+import financeCorpImage from './assets/finance_corp.png'; 
+import designImage from './assets/design-studio.png';
+import animalImage from './assets/animal.png';
+import nyc311 from './assets/nyc311.png'; 
 
 // TODO: Fill with all data Example org data
 export const organizationsData = [
     {
-      id: 1,
+     id: 1,
       title: "Youth Sports Science",
       hours: 2,
-      description: "develop and deliver high-quality, immersive learning experiences that bridge the gap between theoretical knowledge and practical applications",
-      imageUrl: "https://images.app.goo.gl/5LCKAZa8gidNaj216",
-      imageName: "SOMENAME.png",
+      description: "develop and deliver high-quality, immersive learning experiences that bridge the gap between theoretical knowledge and practical applications.",
+      imageUrl: techCorpImage,
+      imageName: "techCorpImage", 
       field: "Sports",
-      location: "Chicago",
+      location: "Chicago", 
       applicationLink: " https://www.yssichi.org/",
       status: "Pending",
       saved: 1,
-     completion: 0,
+      completion: 0,
     },
     {
       id: 2,
       title: "MakeAWish",
       hours: 3,
-      description: " help make the wishes of children with critical illnesses ",
-      imageUrl: "https://images.app.goo.gl/LHEhu3LyEFeBoM9fA",
-      imageName: "SOMENAME.png",
+      description: "help make the wishes of children with critical illnesses",
+      imageUrl: financeCorpImage,
+      imageName: "financeCorpImage",
       field: "Community",
       location: "Chicago",
       applicationLink: "https://wish.org/illinois/volunteer",
@@ -38,9 +39,9 @@ export const organizationsData = [
       id: 3,
       title: "Central Texas Food Bank",
       hours: 4,
-      description: "Helping distribute food, providing cheerful service to clients, and assisting with set-up and teardown at the distribution site.",
-      imageUrl: "https://images.app.goo.gl/Q5FxhQP63nW2zx1W9",
-      imageName: "SOMENAME.png",
+      description: "Helping distribute food, providing cheerful service to clients, and assisting with set-up and teardown at the distribution site",
+      imageUrl: designImage,
+      imageName: "designImage",
       field: "Community",
       location: "Austin",
       applicationLink: "https://www.centraltexasfoodbank.org/get-involved/volunteer",
@@ -53,8 +54,8 @@ export const organizationsData = [
       title: "The Animal Foundation",
       hours: 4,
       description: "Give abandoned animals food, shelter, medical care, exercise, socialization, mental stimulation, and training.",
-      imageUrl: "https://images.app.goo.gl/hcQa5b6BSkGpYPf3A",
-      imageName: "SOMENAME.png",
+      imageUrl: animalImage,
+      imageName: "animalImage",
       field: "Wildlife",
       location: "Las Vegas",
       applicationLink: "https://animalfoundation.com/volunteer/about-volunteering",
@@ -67,8 +68,8 @@ export const organizationsData = [
       title: "311 NYC",
       hours: 3,
       description: " Volunteer in homeless shelters and food pantries through NYC. ",
-      imageUrl: "https://images.app.goo.gl/QrpWSpmVvFj4AmCt8" ,
-      imageName: "SOMENAME.png",
+      imageUrl: nyc311 ,
+      imageName: "nyc311", 
       field: "Hospitality",
       location: "NYC",
       applicationLink: "https://portal.311.nyc.gov/article/?kanumber=KA-01390",
@@ -81,5 +82,10 @@ export const organizationsData = [
   
   // TODO: fill with all data, Organization List image map: CHANGE once all pngs are found
   export const imageMap = {
-    "SOMENAME.png": org1
+    "SOMENAME.png": org1,
+    "financeCorpImage": financeCorpImage, 
+    "techCorpImage": techCorpImage, 
+    "designImage": designImage,  
+    "animalImage": animalImage, 
+    "nyc311": nyc311,
   };

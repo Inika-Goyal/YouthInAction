@@ -4,13 +4,13 @@ import { useNavigate } from 'react-router-dom';
 
 // Internal styles - all included in the same file
 const styles = {
-  menuContainer: {
-    position: 'absolute',
-    top: '10px',
-    left: '1700px',
-    display: 'inline-block',
-    zIndex: 1000 // Ensure the menu appears above other elements
-  },
+    menuContainer: {
+      position: 'fixed', // Fixes it to the viewport
+      top: '10px', // Distance from the top of the page
+      right: '70px', // Distance from the right edge of the page
+      display: 'inline-block',
+      zIndex: 1000 // Ensures it appears above other elements
+    },
   menuButton: {
     backgroundColor: '#000000',
     color: '#ffffff',
@@ -100,7 +100,7 @@ function MenuDropDown() {
                 ...styles.menuItem,
                 ...(hoveredItem === 'saved' ? styles.menuItemHover : {})
               }}
-              onClick={() => handleNavigation('/homePage')}
+              onClick={() => handleNavigation('/savedAppPage')}
               onMouseEnter={() => setHoveredItem('saved')}
               onMouseLeave={() => setHoveredItem(null)}
             >

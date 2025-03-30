@@ -1,89 +1,72 @@
 import React from "react";
+import { organizationsData } from "./OrgData";
 import "./OrgPage.css";
+import MenuDropDown from "./MenuDropDown"; // Import the MenuDropDown component
+function Header() {
+  return (
+    <header className="navBar">
+      <h1 className="logo">Goal</h1>
+      <div className="progressBar" />
+      <p className="progressText">0/100</p>
+      <MenuDropDown />
+    </header>
+  );
+}
+
+
+
 function OrgPage() {
+  // Always use the first organization
+  const organization = organizationsData[0];
+
+  if (!organization) {
+    return <div className="organization-page">No organizations available</div>;
+  }
+
   return (
     <div className="organization-page">
       <div className="div">
         <div className="overlap">
-          <div className="overlap-group">
-          </div>
+          <div className="overlap-group"></div>
 
           <div className="estimated-hours">
             Estimated <br />
-            Hours
+            Hours: {organization.hours}
           </div>
 
           <p className="location-INSERT">
-            Location: INSERT PLACE
+            Location: {organization.location}
             <br />
             <br />
-            <br />
-            Description/Bio the gap between young changemakers and organizations
-            in need. From environmenta bjkahjdkjkdhSJKdsjkhdsjk skahkjh jhaskjhd
-            kjsha hjkhajkhsdjda hjahjkdh&nbsp;&nbsp; hjshkdjahjkdhs hkahdjshdjah
-            hjsahdjhajdhsa hhsajhdjkahh jhjkahl
+            {organization.description}
             <br />
             <br />
-            Requirements: hakdhjsgdjagsjdgdjasjdgjsgdjsag hajkdhjahda da
+            Requirements: INSERT REQUIREMENTS HERE
             <br />
             <br />
-            Conatact Phone #<br />
-            <br /> FULL DESCRIPTION HERE
+            Contact Phone #
+            <br />
+            <br /> Full Description: INSERT FULL DESCRIPTION
             <br />
             <br />
-            <br />
-            More Information: INSERT LINK
+            More Information:{" "}
+            <a href={organization.applicationLink} target="_blank" rel="noopener noreferrer">
+              {organization.applicationLink}
+            </a>
           </p>
 
-          <div className="organization-title">
-            Organization
-            <br />
-            Title
-          </div>
-
-          <div className="text-wrapper">24</div>
+          <div className="organization-title">{organization.title}</div>
+          <div className="text-wrapper">{organization.completion}/100</div>
         </div>
 
         <div className="overlap-2">
-          <img
-            className="photo"
-            alt="Photo"
-    
-          />
-
-          <img
-            className="img"
-            alt="Photo"
-       
-          />
+          <img className="photo" src={organization.imageUrl} alt={organization.title} />
         </div>
 
-        <div className="task-bar">
-          <div className="overlap-group-2">
-            <div className="rectangle" />
-
-            <div className="text-wrapper-2">Goal</div>
-
-            <div className="text-wrapper-3">0/100</div>
-
-            <img
-              className="screenshot"
-              alt="Screenshot"
-             
-            />
-
-            <div className="overlap-3">
-              <div className="text-wrapper-4">Menu</div>
-
-              <img
-                className="screenshot-2"
-                alt="Screenshot"
-              
-              />
-            </div>
-          </div>
-        </div>
+        <Header />
       </div>
     </div>
   );
-};export default OrgPage;
+}
+
+export default OrgPage;
