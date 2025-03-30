@@ -2,6 +2,7 @@ import React, { useRef, useState } from "react";
 import userIcon from "./assets/user_pref_icon.png";
 import "./User.css";
 import MenuDropDown from "./MenuDropDown"; // Import the MenuDropDown component
+import { useNavigate } from 'react-router-dom';
 function Header() {
   return (
     <header className="navBar">
@@ -70,9 +71,10 @@ function User() {
     setSelectedHours(option);
     setIsHoursDropdownOpen(false);
   };
-
+  
+  const navigate = useNavigate();
   const handleSave = () => {
-    alert("Profile saved!");
+    navigate("/homePage");
   };
 
   return (
@@ -137,6 +139,7 @@ function User() {
             </div>
 
             <div className="div-wrapper">
+            <button className="save-btn" onClick={handleSave}>Save</button>
               {/* Location Dropdown */}
               <div className="dropdown">
                 <button onClick={toggleLocationDropdown} className="dropdown-btn">
@@ -182,7 +185,6 @@ function User() {
                 )}
               </div>
               
-              <button className="save-btn" onClick={handleSave}>Save</button>
             </div>
 
             <div className="text-wrapper-15">Preferences</div>
