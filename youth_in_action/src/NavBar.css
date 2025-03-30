@@ -1,0 +1,96 @@
+.nav-bar .profile {
+    height: 50px;
+    left: 1150px;
+    position: absolute;
+    top: 4px;
+    width: 50px;
+  }
+  .nav-bar .task-bar-nav {
+    height: 64px; /* Rounded up */
+    left: 0;
+    position: fixed;
+    top: 0;
+    width: 1900px; /* Rounded up */
+}
+
+.nav-bar .overlap-group-nav {
+    background-color: #10171c;
+    border-bottom-style: solid;
+    border-bottom-width: 3px; /* Rounded up */
+    border-color: #f8fc69;
+    height: 64px; /* Rounded up */
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 1300px; /* Rounded up */
+}
+
+.nav-bar .rectangle-3-nav {
+    background-color: #d9d9d9;
+    border-radius: 25px; /* Rounded up */
+    height: 27px; /* Rounded up */
+    left: 79px; /* Rounded up */
+    position: absolute;
+    top: 14px; /* Rounded up */
+    width: 223px; /* Rounded up */
+}
+
+.nav-bar .text-wrapper-4-nav {
+    color: #ffffff;
+    font-family: "Gabarito-Regular", Helvetica;
+    font-size: 16px; /* Rounded up */
+    font-weight: 400;
+    left: 35px; /* Rounded up */
+    letter-spacing: -0.17px; /* Rounded up */
+    line-height: 13px; /* Rounded up */
+    position: absolute;
+    top: 22px; /* Rounded up */
+    white-space: nowrap;
+    width: 31px; /* Rounded up */
+}
+
+.nav-bar .text-wrapper-5-nav {
+    color: #ffffff;
+    font-family: "Gabarito-Regular", Helvetica;
+    font-size: 16px; /* Rounded up */
+    font-weight: 400;
+    left: 315px; /* Rounded up */
+    letter-spacing: -0.17px; /* Rounded up */
+    line-height: 13px; /* Rounded up */
+    position: absolute;
+    top: 22px; /* Rounded up */
+    white-space: nowrap;
+    width: 36px; /* Rounded up */
+}
+
+.nav-bar .text-wrapper-6-nav {
+    color: #ffffff;
+    font-family: "Gabarito-Regular", Helvetica;
+    font-size: 16px; /* Rounded up */
+    font-weight: 400;
+    left: 1006px; /* Rounded up */
+    letter-spacing: -0.17px; /* Rounded up */
+    line-height: 13px; /* Rounded up */
+    position: absolute;
+    top: 26px; /* Rounded up */
+    white-space: nowrap;
+    width: 122px; /* Rounded up */
+}
+
+.nav-bar .screenshot {
+    height: 42px; /* Rounded up */
+    left: 847px; /* Rounded up */
+    object-fit: cover;
+    position: absolute;
+    top: 11px; /* Rounded up */
+    width: 151px; /* Rounded up */
+}
+
+.nav-bar .screenshot-2 {
+    height: 42px; /* Rounded up */
+    left: 2116px; /* Rounded up */
+    object-fit: cover;
+    position: absolute;
+    top: 100px; /* Rounded up */
+    width: 151px; /* Rounded up */
+}
