@@ -14,6 +14,7 @@ export default function App() {
         <Route path="/" element={<LoginPage />} />
         <Route path="/homePage" element={<HomePage />} />
         <Route path="/user" element={<User />} />
+        <Route path="/orgPage" element={<OrgPage />} />
       </Routes>
     </BrowserRouter>
   );
