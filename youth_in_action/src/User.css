@@ -7,8 +7,12 @@
   }
   
   .save-btn {
-    background-color: #83cfec; /* Green background */
-    color: white;              /* White text */
+    background-color: #000000;
+    color: #ffffff;
+    font-family: "Gowun Batang-Regular", Helvetica;
+    font-size: 20px;
+    border-radius: 50px;
+    height: 50px;             /* White text */
     padding: 10px 20px;        /* Padding inside the button */
     font-size: 16px;           /* Font size */
     border: none;              /* No border */
