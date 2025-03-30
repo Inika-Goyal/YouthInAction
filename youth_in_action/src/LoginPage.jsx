@@ -12,7 +12,7 @@ function LoginPage() {
     // Add your login validation logic here
 
     // If login is successful, navigate to HomePage
-    navigate("/homePage");
+    navigate("/user");
   };
 
 

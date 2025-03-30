@@ -1,0 +1,511 @@
+.user-profile-page {
+    background-color: #10171c;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
+  }
+  
+  .user-profile-page .overlap-wrapper {
+    background-color: #10171c;
+    height: 982px;
+    overflow: hidden;
+    width: 1512px;
+  }
+  
+  .user-profile-page .overlap {
+    height: 982px;
+    position: relative;
+    width: 1518px;
+  }
+  
+  .user-profile-page .rectangle {
+    background: linear-gradient(
+      180deg,
+      rgba(39, 48, 55, 1) 0%,
+      rgba(68, 50, 48, 1) 100%
+    );
+    height: 982px;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 1512px;
+  }
+  
+  .user-profile-page .task-bar {
+    height: 294px;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 1518px;
+  }
+  
+  .user-profile-page .overlap-group {
+    background-color: #10171c;
+    border-bottom-style: solid;
+    border-bottom-width: 4px;
+    border-color: #f8fc69;
+    height: 85px;
+    position: relative;
+    width: 1512px;
+  }
+  
+  .user-profile-page .div {
+    background-color: #d9d9d9;
+    border: 1px solid;
+    border-color: #000000;
+    border-radius: 33px;
+    height: 35px;
+    left: 104px;
+    position: absolute;
+    top: 18px;
+    width: 297px;
+  }
+  
+  .user-profile-page .text-wrapper {
+    -webkit-text-stroke: 1px #000000;
+    color: #ffffff;
+    font-family: "Gabarito-Regular", Helvetica;
+    font-size: 20px;
+    font-weight: 400;
+    left: 45px;
+    letter-spacing: -0.23px;
+    line-height: 17px;
+    position: absolute;
+    top: 26px;
+    white-space: nowrap;
+  }
+  
+  .user-profile-page .text-wrapper-2 {
+    -webkit-text-stroke: 1px #000000;
+    color: #ffffff;
+    font-family: "Gabarito-Regular", Helvetica;
+    font-size: 20px;
+    font-weight: 400;
+    left: 418px;
+    letter-spacing: -0.23px;
+    line-height: 17px;
+    position: absolute;
+    top: 26px;
+    white-space: nowrap;
+  }
+  
+  .user-profile-page .text-wrapper-3 {
+    color: #ffffff;
+    font-family: "Gabarito-Regular", Helvetica;
+    font-size: 20px;
+    font-weight: 400;
+    left: 1340px;
+    letter-spacing: -0.23px;
+    line-height: 17px;
+    position: absolute;
+    top: 34px;
+    white-space: nowrap;
+    width: 162px;
+  }
+  
+  .user-profile-page .screenshot {
+    height: 55px;
+    left: 1101px;
+    object-fit: cover;
+    position: absolute;
+    top: 15px;
+    width: 199px;
+  }
+  
+  .user-profile-page .img {
+    height: 61px;
+    left: 1419px;
+    object-fit: cover;
+    position: absolute;
+    top: 13px;
+    width: 61px;
+  }
+  
+  .user-profile-page .group {
+    height: 713px;
+    left: 70px;
+    position: absolute;
+    top: 178px;
+    width: 557px;
+  }
+  
+  .user-profile-page .overlap-2 {
+    height: 713px;
+    position: relative;
+    width: 545px;
+  }
+  
+  .user-profile-page .overlap-group-wrapper {
+    height: 713px;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 543px;
+  }
+  
+  .user-profile-page .overlap-group-2 {
+    border-radius: 33px;
+    height: 713px;
+    position: relative;
+    width: 539px;
+  }
+  
+  .user-profile-page .rectangle-2 {
+    background-color: #d9d9d9;
+    border-radius: 33px;
+    height: 713px;
+    left: 0;
+    opacity: 0.2;
+    position: absolute;
+    top: 0;
+    width: 539px;
+  }
+  
+  .user-profile-page .rectangle-3 {
+    background-color: #10171c;
+    border-radius: 10px;
+    height: 51px;
+    left: 201px;
+    opacity: 0.3;
+    position: absolute;
+    top: 45px;
+    width: 276px;
+  }
+  
+  .user-profile-page .rectangle-4 {
+    background-color: #10171c;
+    border-radius: 10px;
+    height: 51px;
+    left: 201px;
+    opacity: 0.3;
+    position: absolute;
+    top: 132px;
+    width: 276px;
+  }
+  
+  .user-profile-page .text-wrapper-4 {
+    color: #ffffff80;
+    font-family: "Gabarito-Regular", Helvetica;
+    font-size: 20px;
+    font-weight: 400;
+    left: 223px;
+    letter-spacing: -0.23px;
+    line-height: 17px;
+    position: absolute;
+    top: 62px;
+    width: 209px;
+  }
+  
+  .user-profile-page .text-wrapper-5 {
+    color: #ffffff80;
+    font-family: "Gabarito-Regular", Helvetica;
+    font-size: 20px;
+    font-weight: 400;
+    left: 226px;
+    letter-spacing: -0.23px;
+    line-height: 17px;
+    position: absolute;
+    top: 149px;
+    width: 217px;
+  }
+  
+  .user-profile-page .screenshot-2 {
+    height: 120px;
+    left: 30px;
+    object-fit: cover;
+    position: absolute;
+    top: 544px;
+    width: 479px;
+  }
+  
+  .user-profile-page .text-wrapper-6 {
+    color: #ffffff33;
+    font-family: "Gabarito-Regular", Helvetica;
+    font-size: 30px;
+    font-weight: 400;
+    left: 137px;
+    letter-spacing: -0.23px;
+    line-height: 17px;
+    position: absolute;
+    top: 616px;
+    white-space: nowrap;
+  }
+  
+  .user-profile-page .x-circle {
+    height: 42px !important;
+    left: 249px !important;
+    position: absolute !important;
+    top: 558px !important;
+    width: 42px !important;
+  }
+  
+  .user-profile-page .text-wrapper-7 {
+    color: #ffffffcc;
+    font-family: "Gabarito-Regular", Helvetica;
+    font-size: 24px;
+    font-weight: 400;
+    left: 44px;
+    letter-spacing: -0.23px;
+    line-height: 17px;
+    position: absolute;
+    top: 225px;
+    width: 253px;
+  }
+  
+  .user-profile-page .text-wrapper-8 {
+    color: #ffffffcc;
+    font-family: "Gabarito-Regular", Helvetica;
+    font-size: 24px;
+    font-weight: 400;
+    left: 46px;
+    letter-spacing: -0.23px;
+    line-height: 17px;
+    position: absolute;
+    top: 325px;
+    width: 253px;
+  }
+  
+  .user-profile-page .text-wrapper-9 {
+    color: #ffffffcc;
+    font-family: "Gabarito-Regular", Helvetica;
+    font-size: 24px;
+    font-weight: 400;
+    left: 46px;
+    letter-spacing: -0.23px;
+    line-height: 17px;
+    position: absolute;
+    top: 425px;
+    width: 253px;
+  }
+  
+  .user-profile-page .text-wrapper-10 {
+    color: #ffffffcc;
+    font-family: "Gabarito-Regular", Helvetica;
+    font-size: 24px;
+    font-weight: 400;
+    left: 292px;
+    letter-spacing: -0.23px;
+    line-height: 17px;
+    position: absolute;
+    top: 425px;
+    width: 253px;
+  }
+  
+  .user-profile-page .text-wrapper-11 {
+    color: #ffffffcc;
+    font-family: "Gabarito-Regular", Helvetica;
+    font-size: 24px;
+    font-weight: 400;
+    left: 355px;
+    letter-spacing: -0.23px;
+    line-height: 17px;
+    position: absolute;
+    top: 232px;
+    width: 90px;
+  }
+  
+  .user-profile-page .rectangle-5 {
+    background-color: #d9d9d9;
+    border-radius: 7px;
+    height: 33px;
+    left: 44px;
+    opacity: 0.8;
+    position: absolute;
+    top: 258px;
+    width: 270px;
+  }
+  
+  .user-profile-page .rectangle-6 {
+    background-color: #d9d9d9;
+    border-radius: 7px;
+    height: 33px;
+    left: 353px;
+    opacity: 0.8;
+    position: absolute;
+    top: 261px;
+    width: 142px;
+  }
+  
+  .user-profile-page .rectangle-7 {
+    background-color: #d9d9d9;
+    border-radius: 7px;
+    height: 33px;
+    left: 43px;
+    opacity: 0.8;
+    position: absolute;
+    top: 355px;
+    width: 451px;
+  }
+  
+  .user-profile-page .rectangle-8 {
+    background-color: #d9d9d9;
+    border-radius: 7px;
+    height: 33px;
+    left: 46px;
+    opacity: 0.8;
+    position: absolute;
+    top: 455px;
+    width: 202px;
+  }
+  
+  .user-profile-page .rectangle-9 {
+    background-color: #d9d9d9;
+    border-radius: 7px;
+    height: 33px;
+    left: 290px;
+    opacity: 0.8;
+    position: absolute;
+    top: 453px;
+    width: 202px;
+  }
+  
+  .user-profile-page .application {
+    height: 51px;
+    left: 927px;
+    position: absolute;
+    top: 671px;
+    width: 278px;
+  }
+  
+  .user-profile-page .div-wrapper {
+    height: 26px;
+    left: 1040px;
+    position: absolute;
+    top: 683px;
+    width: 70px;
+  }
+  
+  .user-profile-page .text-wrapper-12 {
+    color: #ffffffcc;
+    font-family: "Gabarito-Regular", Helvetica;
+    font-size: 24px;
+    font-weight: 400;
+    left: 0;
+    letter-spacing: -0.23px;
+    line-height: 17px;
+    position: absolute;
+    top: 0;
+    width: 68px;
+  }
+  
+  .user-profile-page .group-2 {
+    height: 34px;
+    left: 931px;
+    position: absolute;
+    top: 402px;
+    width: 272px;
+  }
+  
+  .user-profile-page .overlap-3 {
+    height: 34px;
+    position: relative;
+    width: 270px;
+  }
+  
+  .user-profile-page .rectangle-10 {
+    background-color: #d9d9d9;
+    border-radius: 7px;
+    height: 33px;
+    left: 0;
+    opacity: 0.8;
+    position: absolute;
+    top: 0;
+    width: 270px;
+  }
+  
+  .user-profile-page .polygon {
+    height: 14px;
+    left: 242px;
+    position: absolute;
+    top: 11px;
+    width: 18px;
+  }
+  
+  .user-profile-page .text-wrapper-13 {
+    color: #2f3439cc;
+    font-family: "Gabarito-Regular", Helvetica;
+    font-size: 24px;
+    font-weight: 400;
+    left: 12px;
+    letter-spacing: -0.23px;
+    line-height: 17px;
+    position: absolute;
+    top: 8px;
+    width: 253px;
+  }
+  
+  .user-profile-page .group-3 {
+    height: 126px;
+    left: 931px;
+    position: absolute;
+    top: 494px;
+    width: 272px;
+  }
+  
+  .user-profile-page .overlap-4 {
+    border-radius: 7px;
+    height: 33px;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 270px;
+  }
+  
+  .user-profile-page .polygon-2 {
+    height: 14px;
+    left: 242px;
+    position: absolute;
+    top: 10px;
+    width: 18px;
+  }
+  
+  .user-profile-page .text-wrapper-14 {
+    color: #2f3439cc;
+    font-family: "Gabarito-Regular", Helvetica;
+    font-size: 24px;
+    font-weight: 400;
+    left: 12px;
+    letter-spacing: -0.23px;
+    line-height: 17px;
+    position: absolute;
+    top: 7px;
+    width: 253px;
+  }
+  
+  .user-profile-page .group-4 {
+    height: 33px;
+    left: 0;
+    position: absolute;
+    top: 93px;
+    width: 272px;
+  }
+  
+  .user-profile-page .overlap-group-3 {
+    border-radius: 7px;
+    height: 33px;
+    position: relative;
+    width: 270px;
+  }
+  
+  .user-profile-page .text-wrapper-15 {
+    color: #ffffffcc;
+    font-family: "Gabarito-Regular", Helvetica;
+    font-size: 40px;
+    font-weight: 400;
+    left: 960px;
+    letter-spacing: -0.23px;
+    line-height: 44px;
+    position: absolute;
+    top: 317px;
+    width: 233px;
+  }
+  
+  .user-profile-page .img-2 {
+    height: 140px;
+    left: 112px;
+    object-fit: cover;
+    position: absolute;
+    top: 225px;
+    width: 140px;
+  }
