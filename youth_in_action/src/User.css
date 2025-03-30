@@ -15,6 +15,7 @@
     border-radius: 5px;        /* Rounded corners */
     cursor: pointer;          /* Pointer cursor on hover */
     transition: background-color 0.3s ease; /* Smooth transition for hover effect */
+    left: 500 px;
   }
   
   .save-btn:hover {
@@ -28,6 +29,8 @@
   margin-top: 10px; /* Space between Preferences and dropdown */
   width: 297px; /* Same width as Location rectangle */
   margin-left: 50px; /* Adjust this value to align properly with Save and Preferences */
+  left :-200px;
+  top: -500px;
 }
 
 .dropdown-btn {

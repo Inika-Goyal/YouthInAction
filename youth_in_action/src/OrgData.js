@@ -71,7 +71,7 @@ export const organizationsData = [
       imageUrl: nyc311 ,
       imageName: "nyc311", 
       field: "Hospitality",
-      location: "NYC",
+      location: "New York",
       applicationLink: "https://portal.311.nyc.gov/article/?kanumber=KA-01390",
       status: "Pending",
       saved: 1,
