@@ -6,6 +6,99 @@
     width: 100%;
   }
   
+  .save-btn {
+    background-color: #83cfec; /* Green background */
+    color: white;              /* White text */
+    padding: 10px 20px;        /* Padding inside the button */
+    font-size: 16px;           /* Font size */
+    border: none;              /* No border */
+    border-radius: 5px;        /* Rounded corners */
+    cursor: pointer;          /* Pointer cursor on hover */
+    transition: background-color 0.3s ease; /* Smooth transition for hover effect */
+  }
+  
+  .save-btn:hover {
+    background-color: #53cec8; /* Darker green on hover */
+  }
+  
+/* Dropdown Button */
+.dropdown {
+  position: relative;
+  display: inline-block;
+  margin-top: 10px; /* Space between Preferences and dropdown */
+  width: 297px; /* Same width as Location rectangle */
+  margin-left: 50px; /* Adjust this value to align properly with Save and Preferences */
+}
+
+.dropdown-btn {
+  background-color: #0a0a0a;
+  color: white;
+  padding: 12px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+  border-radius: 4px;
+  width: 100%; /* Full width of the container */
+  text-align: left;
+  box-sizing: border-box; /* Ensure padding doesn’t add to the width */
+}
+
+
+/* Dropdown Content */
+.dropdown-content {
+  display: block;
+  position: absolute;
+  background-color: #f9f9f9;
+  width: 100%; /* Same width as the button */
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+  border-radius: 4px;
+  max-height: 200px;
+  overflow-y: auto;
+}
+
+/* Dropdown Options */
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+/* Hover effect for options */
+.dropdown-content a:hover {
+  background-color: #ddd;
+}
+
+/* Show dropdown when the button is clicked */
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+  .upload-btn {
+    background-color: #007bff;
+    color: white;
+    font-size: 20px;
+    border: none;
+    border-radius: 50%;
+    width: 35px;
+    height: 35px;
+    cursor: pointer;
+    text-align: center;
+    line-height: 35px;
+    display: inline-block;
+    margin-left: 10px;
+  }
+  
+  .upload-btn:hover {
+    background-color: #0056b3;
+  }
+  
+  .file-name {
+    font-size: 14px;
+    color: #333;
+    margin-top: 5px;
+  }
+  
   .user-profile-page .overlap-wrapper {
     background-color: #10171c;
     height: 982px;
@@ -162,30 +255,8 @@
     width: 539px;
   }
   
-  .user-profile-page .rectangle-3 {
-    background-color: #10171c;
-    border-radius: 10px;
-    height: 51px;
-    left: 201px;
-    opacity: 0.3;
-    position: absolute;
-    top: 45px;
-    width: 276px;
-  }
-  
-  .user-profile-page .rectangle-4 {
-    background-color: #10171c;
-    border-radius: 10px;
-    height: 51px;
-    left: 201px;
-    opacity: 0.3;
-    position: absolute;
-    top: 132px;
-    width: 276px;
-  }
-  
   .user-profile-page .text-wrapper-4 {
-    color: #ffffff80;
+    color: #10171c;
     font-family: "Gabarito-Regular", Helvetica;
     font-size: 20px;
     font-weight: 400;
@@ -198,16 +269,16 @@
   }
   
   .user-profile-page .text-wrapper-5 {
-    color: #ffffff80;
+    color: #10171c;
     font-family: "Gabarito-Regular", Helvetica;
     font-size: 20px;
     font-weight: 400;
-    left: 226px;
+    left: 223px;
     letter-spacing: -0.23px;
     line-height: 17px;
     position: absolute;
     top: 149px;
-    width: 217px;
+    width: 209px;
   }
   
   .user-profile-page .screenshot-2 {
@@ -304,59 +375,50 @@
     top: 232px;
     width: 90px;
   }
-  
-  .user-profile-page .rectangle-5 {
+  .user-profile-page input {
     background-color: #d9d9d9;
     border-radius: 7px;
     height: 33px;
-    left: 44px;
     opacity: 0.8;
+    border: none;
+    padding-left: 10px;
+    padding-right: 10px;
+    font-family: "Gabarito-Regular", Helvetica;
+    font-size: 24px;
+    color: #2f3439cc;
+  }
+  .user-profile-page input.rectangle-5 {
     position: absolute;
     top: 258px;
+    left: 44px;
     width: 270px;
   }
   
-  .user-profile-page .rectangle-6 {
-    background-color: #d9d9d9;
-    border-radius: 7px;
-    height: 33px;
-    left: 353px;
-    opacity: 0.8;
+  .user-profile-page input.rectangle-6 {
     position: absolute;
-    top: 261px;
+    top: 258px;
+    left: 353px;
     width: 142px;
   }
   
-  .user-profile-page .rectangle-7 {
-    background-color: #d9d9d9;
-    border-radius: 7px;
-    height: 33px;
-    left: 43px;
-    opacity: 0.8;
+  .user-profile-page input.rectangle-7 {
     position: absolute;
     top: 355px;
+    left: 43px;
     width: 451px;
   }
   
-  .user-profile-page .rectangle-8 {
-    background-color: #d9d9d9;
-    border-radius: 7px;
-    height: 33px;
-    left: 46px;
-    opacity: 0.8;
+  .user-profile-page input.rectangle-8 {
     position: absolute;
     top: 455px;
+    left: 46px;
     width: 202px;
   }
   
-  .user-profile-page .rectangle-9 {
-    background-color: #d9d9d9;
-    border-radius: 7px;
-    height: 33px;
-    left: 290px;
-    opacity: 0.8;
+  .user-profile-page input.rectangle-9 {
     position: absolute;
     top: 453px;
+    left: 290px;
     width: 202px;
   }
   
@@ -475,7 +537,7 @@
   
   .user-profile-page .group-4 {
     height: 33px;
-    left: 0;
+    left: 0t;
     position: absolute;
     top: 93px;
     width: 272px;
@@ -497,15 +559,17 @@
     letter-spacing: -0.23px;
     line-height: 44px;
     position: absolute;
-    top: 317px;
+    top: 110px;
     width: 233px;
   }
   
   .user-profile-page .img-2 {
     height: 140px;
-    left: 112px;
+    left: 37px;
     object-fit: cover;
     position: absolute;
-    top: 225px;
+    top: 43px;
     width: 140px;
   }
+  
+  

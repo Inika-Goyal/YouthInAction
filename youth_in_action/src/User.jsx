@@ -20,11 +20,8 @@ function User  () {
           <div className="task-bar">
             <div className="overlap-group">
               <div className="div" />
-
               <div className="text-wrapper">Goal</div>
-
               <div className="text-wrapper-2">0/100</div>
-
               <div className="text-wrapper-3">Menu</div>
             </div>
           </div>
@@ -44,9 +41,7 @@ function User  () {
               <div className="overlap-group-wrapper">
                 <div className="overlap-group-2">
                   <div className="rectangle-2" />
-
                   <div className="rectangle-3" />
-
                   <div className="rectangle-4" />
 
                   <div className="text-wrapper-4">Full Name:</div>
@@ -122,6 +117,8 @@ function User  () {
                 <div className="text-wrapper-14">Hours</div>
               </div>
             </div>
+
+            <img className="img-2" alt="Img" src={userIcon} />
           </div>
 
           <div className="text-wrapper-15">Preferences</div>
@@ -135,5 +132,6 @@ function User  () {
       </div>
     </div>
   );
-};
+}
+
 export default User;
