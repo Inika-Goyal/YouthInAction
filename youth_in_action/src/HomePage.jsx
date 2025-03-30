@@ -2,18 +2,18 @@
 import React, { useState, useEffect } from "react";
 import styles from "./HomePage.css";
 import "./HomePage.css"; // Import the CSS file for styles
-
+import MenuDropDown from "./MenuDropDown"; // Import the MenuDropDown component
 import lightsandcubes from "./assets/lights-and-cubes.png";
 import techCorpImage from './assets/tech-corp.png';
-
-// Then use it
-<img src={techCorpImage} alt="Tech Corp" />
+import financeCorpImage from './assets/finance_corp.png'; 
+import designImage from './assets/design-studio.png';
+import animalImage from './assets/animal.png'; // Import additional images for organizations
 
 // User preferences for matching
 const userPreferences = {
-  field: "Tech",  // Desired field
-  location: "NYC", // Desired location
-  min_hours: 20, // Minimum desired hours
+  field: "Sports",  // Desired field
+  location: "Chicago", // Desired location
+  min_hours: 1, // Minimum desired hours
 };
 
 // Function to calculate match score for an organization
@@ -33,34 +33,46 @@ const calculateMatchScore = (organization) => {
 const organizationsData = [
   {
     id: 1,
-    title: "Tech Corp",
-    hours: 25,
-    description: "A leading tech company.",
+    title: "Youth Sports Science",
+    hours: 2,
+    description: "develop and deliver high-quality, immersive learning experiences that bridge the gap between theoretical knowledge and practical applications.",
     imageUrl: techCorpImage,
-    field: "Tech",
-    location: "NYC",
+    field: "Sports",
+    location: "Chicago", 
     applicationLink: "/apply/tech-corp"
   },
   {
     id: 2,
-    title: "Finance Corp",
-    hours: 15,
-    description: "A financial company.",
-    imageUrl: "/images/finance-corp.png",
-    field: "Finance",
-    location: "NYC",
+    title: "MakeAWish",
+    hours: 3,
+    description: "help make the wishes of children with critical illnesses",
+    imageUrl: financeCorpImage,
+    field: "Community",
+    location: "Chicago",
     applicationLink: "/apply/finance-corp"
   },
   {
     id: 3,
-    title: "Design Studio",
-    hours: 30,
-    description: "Creative studio for design projects.",
-    imageUrl: "/images/design-studio.png",
-    field: "Design",
-    location: "Remote",
+    title: "Central Texas Food Bank",
+    hours: 4,
+    description: "Helping distribute food, providing cheerful service to clients, and assisting with set-up and teardown at the distribution site",
+    imageUrl: designImage,
+    field: "Community",
+    location: "Austin",
     applicationLink: "/apply/design-studio"
+  },
+  {
+    id: 4,
+    title: "The Animal Foundation",
+    hours: 4,
+    description: "Give abandoned animals food, shelter, medical care, exercise, socialization, mental stimulation, and training.",
+    imageUrl: animalImage,
+    field: "Wildlife",
+    location: "Las Vegas",
+    applicationLink: "https://animalfoundation.com/volunteer/about-volunteering",
+
   }
+
   // Add more organizations as needed
 ];
 
@@ -97,17 +109,22 @@ function InputDesign() {
     }
   };
 
+  // Get previous and next organizations for side cards
+  const prevOrganization = counter > 0 ? sortedOrganizations[counter - 1] : null;
+  const nextOrganization = counter < sortedOrganizations.length - 1 ? sortedOrganizations[counter + 1] : null;
+
   return (
     <main className="mainContainer">
       <Header />
       <ContentSection
         organization={sortedOrganizations[counter]} // Display organization based on counter
+        prevOrganization={prevOrganization}
+        nextOrganization={nextOrganization}
         handleNext={handleNext}
         handlePrevious={handlePrevious}
         canGoNext={counter < sortedOrganizations.length - 1}
         canGoPrevious={counter > 0}
       />
-      {/* Removed the navigation buttons since we're using side cards instead */}
     </main>
   );
 }
@@ -118,21 +135,91 @@ function Header() {
       <h1 className="logo">Goal</h1>
       <div className="progressBar" />
       <p className="progressText">0/100</p>
-      <button className="menuButton">Menu</button>
+      <MenuDropDown />
     </header>
   );
 }
 
-function ContentSection({ organization, handleNext, handlePrevious, canGoNext, canGoPrevious }) {
+// Side card component to display a preview of prev/next organizations
+function SideCard({ organization, onClick, isDisabled, cardClass }) {
+  if (!organization || isDisabled) {
+    return (
+      <div 
+        className={cardClass} 
+        style={{ cursor: isDisabled ? 'default' : 'pointer', opacity: isDisabled ? 0.08 : 0.5 }}
+      />
+    );
+  }
+
+  return (
+    <div 
+      className={cardClass} 
+      onClick={onClick}
+      style={{ 
+        cursor: 'pointer', 
+        opacity: 0.7,
+        position: 'relative',
+        overflow: 'hidden'
+      }}
+    >
+      <div style={{ 
+        position: 'absolute', 
+        top: '10px', 
+        left: '0',
+        width: '100%',
+        textAlign: 'center',
+        color: 'white',
+        fontFamily: 'Gabarito, sans-serif',
+        fontSize: '20px',
+        fontWeight: 'bold',
+        padding: '0 10px',
+        zIndex: 2
+      }}>
+        {organization.title}
+      </div>
+      
+      <div style={{ 
+        position: 'absolute',
+        top: 0,
+        left: 0,
+        width: '100%',
+        height: '100%',
+        backgroundColor: '#00197d',
+        opacity: 0.6,
+        zIndex: 0
+      }} />
+      
+      {organization.imageUrl && (
+        <div style={{ 
+          position: 'absolute',
+          top: 0,
+          left: 0,
+          width: '100%',
+          height: '100%',
+          backgroundImage: `url(${organization.imageUrl})`,
+          backgroundPosition: 'center',
+          backgroundSize: 'cover',
+          backgroundRepeat: 'no-repeat',
+          zIndex: 1,
+          opacity: 0.5
+        }} />
+      )}
+    </div>
+  );
+}
+
+function ContentSection({ organization, prevOrganization, nextOrganization, handleNext, handlePrevious, canGoNext, canGoPrevious }) {
   return (
     <section className="contentSection">
       <h2 className="matchPercentage">{organization ? `${organization.match_score}% Match` : "Loading..."}</h2>
       <div className="cardContainer">
-        <div 
-          className="sideCardLeft" 
-          onClick={canGoPrevious ? handlePrevious : undefined} 
-          style={{ cursor: canGoPrevious ? 'pointer' : 'default', opacity: canGoPrevious ? 1 : 0.5 }}
+        <SideCard 
+          organization={prevOrganization}
+          onClick={canGoPrevious ? handlePrevious : undefined}
+          isDisabled={!canGoPrevious}
+          cardClass="sideCardLeft"
         />
+        
         {organization ? (
           <OrganizationCard
             key={organization.id}
@@ -144,10 +231,12 @@ function ContentSection({ organization, handleNext, handlePrevious, canGoNext, c
         ) : (
           <p>Loading...</p>
         )}
-        <div 
-          className="sideCardRight" 
-          onClick={canGoNext ? handleNext : undefined} 
-          style={{ cursor: canGoNext ? 'pointer' : 'default', opacity: canGoNext ? 1 : 0.5 }}
+        
+        <SideCard 
+          organization={nextOrganization}
+          onClick={canGoNext ? handleNext : undefined}
+          isDisabled={!canGoNext}
+          cardClass="sideCardRight"
         />
       </div>
     </section>
@@ -155,14 +244,23 @@ function ContentSection({ organization, handleNext, handlePrevious, canGoNext, c
 }
 
 function OrganizationCard({ title, estimatedHours, description, imageUrl }) {
+  const [isLiked, setIsLiked] = useState(false); // Add state for tracking liked status
+  
+  // Function to toggle the liked state
+  const toggleLike = () => {
+    setIsLiked(!isLiked);
+  };
+
   return (
     <article className="mainCard">
-      <div className="cardImage"  >       <img src={techCorpImage}
+      <div className="cardImage">       
+        <img src={imageUrl}
           style={{ 
             width: '500px',
             height: '685px',
             objectFit: 'fill'
-          }} /> </div> 
+          }} /> 
+      </div> 
       <div className="cardContent">
         <h3 className="orgTitle">{title}</h3>
         <p className="hoursLabel">Estimated Hours</p>
@@ -188,12 +286,12 @@ function OrganizationCard({ title, estimatedHours, description, imageUrl }) {
             </svg>
           </button>
           <button className="applicationButton">Send Application</button>
-          <button className="heartButton">
+          <button className="heartButton" onClick={toggleLike}>
             <svg
               width="45"
               height="42"
               viewBox="0 0 45 42"
-              fill="none"
+              fill={isLiked ? "#1E1E1E" : "none"}
               xmlns="http://www.w3.org/2000/svg"
             >
               <path

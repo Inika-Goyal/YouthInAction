@@ -117,6 +117,7 @@
   width: 540px;
   height: 810px;
   position: relative;
+  opacity: 1 !important;
 }
 
 @media (width<=991px) {
@@ -145,7 +146,6 @@
     top: 36px;
     left: 50%;
     transform: translate(-50%);
-    opacity: 1;
   }
 
 @media (width<=991px) {
