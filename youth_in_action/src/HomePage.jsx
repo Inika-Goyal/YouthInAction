@@ -200,8 +200,12 @@ function OrganizationCard({ organization }) {
   // Function to toggle the liked state
   const toggleLike = () => {
     setIsLiked(!isLiked);
-    navigate("/OrgPage"); 
+    organization.saved=!organization.saved; 
   };
+  const applyOrg = () => {
+    navigate("/OrgPage");
+  };    
+
 
   // Use the correct image from imageMap based on imageName property
   const orgImage = organization.imageName ? imageMap[organization.imageName] : null;
@@ -222,7 +226,7 @@ function OrganizationCard({ organization }) {
         <p className="hoursValue">{organization.hours}</p>
         <p className="orgDescription">{organization.description}</p>
         <div className="actionButtons">
-          <button className="arrowButton">
+          <button className="arrowButton" onClick={applyOrg}>
             <svg
               width="48"
               height="48"
@@ -240,7 +244,7 @@ function OrganizationCard({ organization }) {
               ></path>
             </svg>
           </button>
-          <button className="applicationButton" onClick={() => window.open(organization.applicationLink, '_blank')}>
+          <button className="applicationButton" onClick={applyOrg}>
             Send Application
           </button>
           <button className="heartButton" onClick={toggleLike}>

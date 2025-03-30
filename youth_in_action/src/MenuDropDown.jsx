@@ -98,6 +98,17 @@ function MenuDropDown() {
             <li 
               style={{
                 ...styles.menuItem,
+                ...(hoveredItem === 'home' ? styles.menuItemHover : {})
+              }}
+              onClick={() => handleNavigation('/homePage')}
+              onMouseEnter={() => setHoveredItem('home')}
+              onMouseLeave={() => setHoveredItem(null)}
+            >
+              Home Page
+            </li>
+            <li 
+              style={{
+                ...styles.menuItem,
                 ...(hoveredItem === 'saved' ? styles.menuItemHover : {})
               }}
               onClick={() => handleNavigation('/savedAppPage')}

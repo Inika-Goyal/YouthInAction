@@ -17,7 +17,7 @@ export const organizationsData = [
       field: "Sports",
       location: "Chicago", 
       applicationLink: " https://www.yssichi.org/",
-      status: "Pending",
+      status: "None",
       saved: 1,
       completion: 0,
     },

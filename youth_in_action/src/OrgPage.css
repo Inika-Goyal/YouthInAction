@@ -102,14 +102,16 @@
     width: 941px;
   }
   
-  .organization-page .photo {
-    height: 1055px;
-    left: 237px;
-    position: absolute;
-    top: 0;
-    width: 704px;
-  }
+
   
+
+    .organization-page .photo {
+  height: 978px;
+  left: 1100px;
+  position: absolute;
+  top: 0;
+  width: 704px;
+}
   .organization-page .img {
     height: 389px;
     left: 0;
@@ -216,4 +218,17 @@
     position: absolute;
     top: 0;
     width: 61px;
+  }
+
+.apply-button {
+    background-color: #000000;
+    color: #ffffff;
+    font-family: "Gowun Batang-Regular", Helvetica;
+    font-size: 20px;
+    border-radius: 50px;
+    height: 50px;
+    left: 700px;
+    position: absolute;
+    top: 685px;
+    width: 155px;
   }
