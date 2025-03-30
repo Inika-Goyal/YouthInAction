@@ -42,7 +42,7 @@
   background-color: #a4bbca;
   border-radius: 20px;
   height: 797px;
-  left: 15;
+  left: 15px;
   opacity: 0.15;
   position: absolute;
   top: 124px;
@@ -62,12 +62,15 @@
   top: 635px;
   width: 390px;
 }
-.landing-page #email{
+
+.landing-page #email {
   top: 655px;
 }
-.landing-page #password{
-  top: 720px; /* Adjusted for password input */
+
+.landing-page #password {
+  top: 720px;
 }
+
 .landing-page .input {
   background-color: #1a2025;
   border: 3px solid #000000;
@@ -78,14 +81,15 @@
   box-shadow: 0px 4px 4px #00000040;
   height: 50px;
   width: 390px;
-  padding-left: 10px; /* Adds padding to make text inside look good */
+  padding-left: 10px;
   position: absolute;
-  top: 655px; /* Same as the rectangle's top position */
-  left: 70px; /* Same as the rectangle's left position */
+  top: 655px;
+  left: 70px;
 }
+
 .landing-page .input::placeholder {
-  color: #ffffff80; /* Change this color to whatever you prefer */
-  font-size: 20px; /* Optional: Adjust placeholder text size */
+  color: #ffffff80;
+  font-size: 20px;
   font-weight: bold;
 }
 
@@ -117,14 +121,14 @@
 
 .landing-page .login-button {
   background-color: #000000;
-  color:#ffffff;
+  color: #ffffff;
   font-family: "Gowun Batang-Regular", Helvetica;
   font-size: 20px;
   border-radius: 50px;
   height: 50px;
   left: 500px;
   position: absolute;
-  top: 685px; /* Adjusted to be below the input fields */
+  top: 685px;
   width: 155px;
 }
 
@@ -143,15 +147,34 @@
 
 .landing-page .photo {
   height: 978px;
-  left: 747px;
+  left: 1000px;
   position: absolute;
   top: 0;
   width: 704px;
 }
+
 .landing-page .photo2 {
   height: 200px;
   left: 200px;
   position: absolute;
-  top: 800px;
+  top: 750px;
   width: 300px;
+}
+
+.box {
+  height: 797px;
+  width: 716px;
+}
+
+.box .rectangle {
+  -webkit-backdrop-filter: blur(2px) brightness(100%);
+  backdrop-filter: blur(2px) brightness(100%);
+  background-color: #a4bbca;
+  border-radius: 20px;
+  height: 797px;
+  left: 315px;
+  opacity: 0.15;
+  position: fixed;
+  top: 99px;
+  width: 716px;
 }
