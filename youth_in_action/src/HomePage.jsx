@@ -1,6 +1,7 @@
 "use client";
 import React, { useState, useEffect } from "react";
 import styles from "./HomePage.css";
+import { useNavigate } from "react-router-dom";
 import "./HomePage.css"; // Import the CSS file for styles
 import MenuDropDown from "./MenuDropDown"; // Import the MenuDropDown component
 import lightsandcubes from "./assets/lights-and-cubes.png";
@@ -245,10 +246,11 @@ function ContentSection({ organization, prevOrganization, nextOrganization, hand
 
 function OrganizationCard({ title, estimatedHours, description, imageUrl }) {
   const [isLiked, setIsLiked] = useState(false); // Add state for tracking liked status
-  
+  const navigate = useNavigate(); 
   // Function to toggle the liked state
   const toggleLike = () => {
     setIsLiked(!isLiked);
+    navigate("/OrgPage"); 
   };
 
   return (

@@ -1,18 +1,11 @@
 import React from "react";
-import { Size48 } from "./Size48";
-import photo1622737133809D95047B9E6731 from "./photo-1622737133809-d95047b9e673-1.png";
-import photo1622737133809D95047B9E6732 from "./photo-1622737133809-d95047b9e673-2.png";
-import screenshot20250329134141RemovebgPreview3 from "./screenshot-2025-03-29-134141-removebg-preview-3.png";
-import screenshot20250329140217RemovebgPreview2 from "./screenshot-2025-03-29-140217-removebg-preview-2.png";
-import "./style.css";
-
-export const OrganizationPage = () => {
+import "./OrgPage.css";
+function OrgPage() {
   return (
     <div className="organization-page">
       <div className="div">
         <div className="overlap">
           <div className="overlap-group">
-            <Size48 className="arrow-down" />
           </div>
 
           <div className="estimated-hours">
@@ -55,13 +48,13 @@ export const OrganizationPage = () => {
           <img
             className="photo"
             alt="Photo"
-            src={photo1622737133809D95047B9E6731}
+    
           />
 
           <img
             className="img"
             alt="Photo"
-            src={photo1622737133809D95047B9E6732}
+       
           />
         </div>
 
@@ -76,7 +69,7 @@ export const OrganizationPage = () => {
             <img
               className="screenshot"
               alt="Screenshot"
-              src={screenshot20250329134141RemovebgPreview3}
+             
             />
 
             <div className="overlap-3">
@@ -85,7 +78,7 @@ export const OrganizationPage = () => {
               <img
                 className="screenshot-2"
                 alt="Screenshot"
-                src={screenshot20250329140217RemovebgPreview2}
+              
               />
             </div>
           </div>
@@ -93,4 +86,4 @@ export const OrganizationPage = () => {
       </div>
     </div>
   );
-};
+};export default OrgPage;

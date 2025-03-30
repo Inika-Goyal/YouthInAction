@@ -1,10 +1,16 @@
-import React from "react";
-
-import userIcon from "./assets/user_pref_icon.png"; 
-
+import React, { useState } from "react";
+import { useNavigate } from "react-router-dom"; // Import useNavigate for navigation
+import userIcon from "./assets/user_pref_icon.png";
 import "./User.css";
 
 function User  () {
+  const navigate = useNavigate(); // Create navigate function
+
+  // Function to handle the save button click event
+  const handleSaveChanges = () => {
+    // Navigate to a new page (for example, a "Profile Saved" page or another route)
+    navigate("/HomePage"); // Change '/profile-saved' to your desired route
+  };
   return (
     <div className="user-profile-page">
       <div className="overlap-wrapper">
@@ -86,7 +92,9 @@ function User  () {
           />
 
           <div className="div-wrapper">
-            <div className="text-wrapper-12">Save</div>
+            <button className="text-wrapper-12" onClick={handleSaveChanges}>
+              Save
+            </button>
           </div>
 
           <div className="group-2">
