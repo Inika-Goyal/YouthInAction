@@ -52,6 +52,7 @@ function LoginPage() {
 
               <button className="login-button" onClick={handleLogin}>Login</button>
             </div>
+            {/* Animated text */}
             <div className="text-wrapper-2">Youth In Action</div>
             <img className="photo" alt="Photo" src={lightsandcubes} />
             <img className="photo2" alt="Photo" src={loginicons} />
