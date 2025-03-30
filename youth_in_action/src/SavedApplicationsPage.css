@@ -1,0 +1,177 @@
+.saved-applications {
+  background-color: #10171c;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.saved-applications .overlap-wrapper {
+  background-color: #10171c;
+  height: 1753px;
+  overflow: hidden;
+  width: 1512px;
+}
+
+.saved-applications .overlap {
+  height: 1428px;
+  width: 1512px;
+  position: relative;
+}
+
+.saved-applications .rectangle {
+  background: linear-gradient(180deg, #273037 0%, #443230 100%);
+  height: 100%;
+  width: 100%;
+  position: absolute;
+}
+
+/* Heading */
+.saved-applications .text-wrapper {
+  color: #fff;
+  font-family: "Gabarito-Regular", Helvetica;
+  font-size: 40px;
+  left: 88px;
+  top: 169px;
+  position: absolute;
+}
+
+/* Task Bar */
+.saved-applications .task-bar {
+  width: 100%;
+  height: 85px;
+  position: absolute;
+  top: 0;
+}
+
+.saved-applications .overlap-group {
+  background-color: #10171c;
+  border-bottom: 4px solid #f8fc69;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+}
+
+.saved-applications .div,
+.saved-applications .text-wrapper-2,
+.saved-applications .text-wrapper-3 {
+  color: #fff;
+  font-family: "Gabarito-Regular", Helvetica;
+  font-size: 20px;
+}
+
+.saved-applications .rectangle-2 {
+  background-color: #d9d9d9;
+  border: 1px solid #000;
+  border-radius: 33px;
+  height: 35px;
+  width: 297px;
+}
+
+/* Logo and Screenshot Styling */
+.saved-applications .screenshot,
+.saved-applications .img {
+  height: 55px;
+  object-fit: cover;
+}
+
+.saved-applications .screenshot {
+  width: 199px;
+}
+
+.saved-applications .img {
+  width: 61px;
+}
+
+.saved-applications .organization-card {
+  width: 363px;
+  height: 474px;
+  border-radius: 33px;
+  background-color: rgba(217, 217, 217, 0.2);
+  position: relative;
+  padding: 0 10px 10px 10px;
+}
+
+.saved-applications .buttons-wrapper {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  display: flex;
+  gap: 10px;
+}
+
+.saved-applications .buttons-wrapper img {
+  width: 55px;
+  height: 55px;
+  cursor: pointer;
+}
+
+
+.saved-applications .screenshot-2 {
+  width: 314px;
+  height: 261px;
+  object-fit: cover;
+  position: absolute;
+  top: 108px;
+  left: 29px;
+}
+
+.saved-applications .organization-title,
+.saved-applications .application-status {
+  color: #ffffffbf;
+  font-family: "Gabarito-Regular", Helvetica;
+}
+
+.saved-applications .organization-title {
+  font-size: 30px;
+  position: absolute;
+  top: 27px;
+  left: 29px;
+}
+
+.saved-applications .application-status {
+  font-size: 20px;
+  position: absolute;
+  top: 393px;
+  left: 29px;
+}
+
+/* Buttons */
+.saved-applications img.check-box,
+.saved-applications img.like-button,
+.saved-applications img.check-box-outline {
+  width: 55px;
+  height: 55px;
+  cursor: pointer;
+  position: absolute;
+  top: 399px;
+}
+
+.saved-applications img.check-box {
+  left: 234px;
+}
+
+.saved-applications img.like-button {
+  left: 298px;
+}
+
+.saved-applications img.check-box-outline {
+  left: 235px;
+}
+
+/* Responsive Grid */
+.saved-applications .organization-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(363px, 1fr));
+  gap: 80px;
+  padding: 245px 88px 0;
+}
+
+.saved-applications .no-applications {
+  color: #fff;
+  font-size: 24px;
+  text-align: center;
+  margin-top: 50px;
+}
